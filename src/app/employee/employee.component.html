@@ -1,0 +1,35 @@
+<button (click)="departmentNumber = 1">Accounts</button>
+<button (click)="departmentNumber = 2">Sales</button>
+<button (click)="departmentNumber = 3">Marketing</button>
+<button (click)="departmentNumber = 4">Finance</button>
+<button (click)="departmentNumber = -1">All departments</button>
+
+<h1></h1>
+<h1>{{job}}</h1>
+<button *ngIf="!isEndOfArray()" (click)="getNextEmployees()">Load more</button>
+<select [(ngModel)] = "job">
+    <option value="All jobs">All jobs</option>
+    <option value="Developer">Developer</option>
+    <option value="Front End Developer">Front End Developer</option>
+    <option value="Tester">Tester</option>
+    <option value="Team Lead">Team Lead</option>
+    <option value="Manager">Manager</option>
+</select>
+
+<table border="2" width="250">
+    <tr>
+        <th>S.No.</th>
+        <th>Employee Name</th>
+        <th>Performance Grades</th>
+        <th>Department</th>
+        <th>Job</th>
+    </tr>
+    <tr *ngFor="let employee of (employees | departmentPipe:departmentNumber:job 
+            | slice:startNumberOfDisplayedEmployees:endNumberOfDisplayedEmployees)">
+        <td>{{employee.id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.grade | employeeGradesPipe}}</td>
+        <td>{{employee.departmentNumber | departmentNamingPipe}}</td>
+        <td>{{employee.job}}</td>
+    </tr>
+</table>
