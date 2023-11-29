@@ -9,6 +9,8 @@ import { EmployeeGradesPipePipe } from './pipes/employee-grades-pipe.pipe';
 import { DepartmentPipe } from './pipes/department-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { DepartmentNamingPipe } from './pipes/department-naming.pipe';
+import { ProductListComponent } from './product-list/product-list.component';
+import { FilterByCateogryPipe } from './pipes/filter-by-cateogry.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { DepartmentNamingPipe } from './pipes/department-naming.pipe';
     EmployeeGradesPipePipe,
     DepartmentPipe,
     DepartmentNamingPipe,
+    ProductListComponent,
+    FilterByCateogryPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+<div>
+  <select>
+    <option value="House">House</option>
+    <option value="Garden">House</option>
+    <option value="Work">House</option>
+    <option value="Sport">House</option>
+  </select>
+</div>
+
+<div>
+  <table border="2" width="250">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Category</th>
+    </tr>
+    <tr *ngFor="let product of products | filterByCateogry : category">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>
+        <a [href]="'http://www.' + product.category + '.com'">{{ product.category }}</a>
+      </td>
+    </tr>
+  </table>
+</div>

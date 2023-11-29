@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-app';
   email:string = "sSSSilviuu_popa98@yahoo.com";
+  category:string = "All";
 
   public usersArray:any[] =
 	[
